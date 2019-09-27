@@ -16,17 +16,23 @@ class App {
 
     addClickHandler() {
         document.addEventListener('click', (event) => {
-            if (event.target.matches('#addTask')) {
+            let { action } = event.target.dataset;
+            if (!action) { return; }
+
+            // add todo
+            if (action === 'addTask') {
                 let todo = event.target.previousElementSibling.value
                 this.add(todo)
             }
 
-            if (event.target.matches('#markTask')) {
+            // mark todo
+            if (action === 'markTask') {
                 let id = event.target.parentElement.id;
                 this.mark(id)
             }
 
-            if (event.target.matches('#removeTask')) {
+            // remove todo
+            if (action === 'removeTask') {
                 let id = event.target.parentElement.id;
                 this.remove(id)
             }
@@ -85,16 +91,16 @@ class App {
             ${this.state.data.map(task => {
                 return `
                     <li id=${task.id} class="task">
-                        <input id="markTask" class="task-mark" type="checkbox" ${task.data.done && 'checked'}>
+                        <input data-action="markTask" class="task-mark" type="checkbox" ${task.data.done && 'checked'}>
                         <div class="task-name">${task.data.name}</div>
-                        <div id="removeTask" class="task-close">X</div>
+                        <div data-action="removeTask" class="task-close">X</div>
                     </li>
                 `
             }).join('')}
         </ul>
         <div class="input">
-            <input id="taskInput"></input>
-            <button id="addTask">${this.config.settings.addText}</button>
+            <input data-action="taskInput"></input>
+            <button data-action="addTask">${this.config.settings.addText}</button>
         </div>
         `
     }
