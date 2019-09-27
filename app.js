@@ -79,7 +79,6 @@ class App {
     }
 
     render() {
-        console.log(this)
         this.root.innerHTML = `
         <h1>${this.config.settings.name}</h1>
         <ul>

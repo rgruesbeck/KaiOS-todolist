@@ -1,14 +1,18 @@
-# Hello World with Browserify
-A blank template ready for your own favorite tools.
+# Todolist
+A todolist for KaiOS
 
 ## VCCs
 > VCCs (Visual Customization Controls) help make your app easy for no-code creators to remix your app.
 - ⚙️ An example VCC for changing the app name.
     * [settings.json](#~/.koji/customization/settings.json!visual)
+    * [colors.json](#~/.koji/customization/colors.json!visual)
 
 ## Files
 - [index.html](#~/index.html) main html file for the app.
-- [index.js](#~/index.js) main javascript file for the app with example koji config.
+- [index.js](#~/index.js) javascript entrypoint file.
+- [apps.js](#~/app.js) app code.
+- [styles.js](#~/styles.js) app styles.
+- [storage.js](#~/storage.js) storage code.
 
 ## Dependencies
 - [browserfiy + babel](http://browserify.org/) use require('modules') in the browser.
