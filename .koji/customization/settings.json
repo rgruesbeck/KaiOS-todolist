@@ -1,0 +1,38 @@
+{
+  "settings": {
+    "name": "Todo List",
+    "addText": "Add",
+    "locale": "en-US",
+    "fontFamily": "Be Vietnam"
+  },
+  "@@editor": [
+    {
+      "key": "settings",
+      "name": "App settings",
+      "icon": "⚙️",
+      "source": "settings.json",
+      "fields": [
+        {
+          "key": "name",
+          "name": "App name",
+          "type": "text"
+        },
+        {
+          "key": "addText",
+          "name": "Add Text",
+          "type": "text"
+        },
+        {
+          "key": "locale",
+          "name": "Locale",
+          "type": "text"
+        },
+        {
+          "key": "fontFamily",
+          "name": "Google Font Family",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
